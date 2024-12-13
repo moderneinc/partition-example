@@ -1,0 +1,17 @@
+build:
+  partitions:
+    - name: partition1
+      steps:
+        - type: resource
+          inclusion: |-
+            partition1.txt
+    - name: partition2
+      steps:
+        - type: resource
+          inclusion: |-
+            partition2.txt
+    - name: the-rest
+      steps:
+        - type: resource
+          inclusion: |-
+            *
