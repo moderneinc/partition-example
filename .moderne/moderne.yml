@@ -10,8 +10,9 @@ build:
         - type: resource
           inclusion: |-
             partition2.txt
-    - name: the-rest
+    - name: all
       steps:
         - type: resource
           inclusion: |-
+            !partition*.*
             *
