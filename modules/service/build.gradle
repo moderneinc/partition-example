@@ -1,0 +1,11 @@
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Add your client-specific dependencies here
+}

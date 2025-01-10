@@ -1,18 +1,24 @@
 build:
   partitions:
-    - name: partition1
+    - name: service
+      steps:
+        - type: gradle
+          inclusion: |-
+            modules/service/**
+        - type: resource
+          inclusion: |-
+            modules/service/**
+    - name: client
+      steps:
+        - type: gradle
+          inclusion: |-
+            modules/client/**
+        - type: resource
+          inclusion: |-
+            modules/client/**
+    - name: everything-else
       steps:
         - type: resource
           inclusion: |-
-            partition1.txt
-    - name: partition2
-      steps:
-        - type: resource
-          inclusion: |-
-            partition2.txt
-    - name: all
-      steps:
-        - type: resource
-          inclusion: |-
-            !partition*.*
             *
+            !modules/**
