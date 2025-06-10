@@ -1,1 +1,1 @@
-This is the readme for the whole repo.
+This is the README for the whole repo.
