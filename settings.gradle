@@ -1,0 +1,4 @@
+rootProject.name = "partition-example"
+
+include ":modules:client"
+include ":modules:service"
