@@ -1,22 +1,42 @@
 build:
   partitions:
+    - name: root
+      steps:
+        - type: gradle
+          inclusion: |-
+            **/*
+            !modules/**
+        - type: resource
+          inclusion: |-
+            **/*
+            !modules/**
     - name: nest1
       steps:
         - type: gradle
-#          inclusion: |-
-#            **/modules/nestparent/nest1/**
-          subprojects:
-            - :modules:nestparent:nested1
+          inclusion: |-
+            modules/nestparent/nest1/**
+            modules/client/**
         - type: resource
           inclusion: |-
-            **/modules/nestparent/nest1/**
-    - name: nest2
-      steps:
-        - type: gradle
-          subprojects:
-            - :modules:nestparent:nest2
+            modules/nestparent/nest1/**
+            modules/client/**
     - name: nest3
       steps:
         - type: gradle
-          subprojects:
-            - :modules:nestparent:nest3
+          inclusion: |-
+            modules/nestparent/nest3/**
+            modules/client/**
+        - type: resource
+          inclusion: |-
+            modules/nestparent/nest3/**
+            modules/client/**
+    - name: service
+      steps:
+        - type: gradle
+          inclusion: |-
+            modules/service/**
+            modules/client/**
+        - type: resource
+          inclusion: |-
+            modules/service/**
+            modules/client/**
