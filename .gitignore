@@ -1,2 +1,6 @@
 **/.gradle/
 **/build/
+
+# Moderne CLI
+.moderne/*
+!.moderne/context/
